@@ -6,21 +6,15 @@
 *///-----------------------------------------------------------------------
 
 #include <iostream>
+#include <limits>
 #include <icc/icc.hpp>
 
 int main()
 {
-    using Type = int;
-    
-    Type max = std::numeric_limits<Type>::max();
-    Type min = std::numeric_limits<Type>::min();
-    
-    Type a = max/3;
-    Type b = -4;
+    int a = std::numeric_limits<int>::max();
+    int b = 1;
     
     auto res = icc::mul(a, b);
-    
-    std::cout << a*b << std::endl;
     
     switch(res)
     {
