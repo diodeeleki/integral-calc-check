@@ -18,9 +18,9 @@
 
 |名前|ヘッダ|備考|
 |---|---|---|
-|icc::Result icc::add(const Type l_arg, const Type r_arg)|<icc/icc.hpp>|加算を行う際のオーバーフローアンダーフローチェック|
-|icc::Result icc::sub(const Type l_arg, const Type r_arg)|<icc/icc.hpp>|減算を行う際のオーバーフローアンダーフローチェック|
-|icc::Result icc::mul(const Type l_arg, const Type r_arg)|<icc/icc.hpp>|乗算を行う際のオーバーフローアンダーフローチェック|
+|icc::Result icc::add(const Type l_arg, const Type r_arg)noexcept|<icc/icc.hpp>|加算を行う際のオーバーフローアンダーフローチェック|
+|icc::Result icc::sub(const Type l_arg, const Type r_arg)noexcept|<icc/icc.hpp>|減算を行う際のオーバーフローアンダーフローチェック|
+|icc::Result icc::mul(const Type l_arg, const Type r_arg)noexcept|<icc/icc.hpp>|乗算を行う際のオーバーフローアンダーフローチェック|
 
 除算ではオーバーフローもアンダーフローも発生しないので実装していない。
 
