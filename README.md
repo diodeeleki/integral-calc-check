@@ -80,7 +80,7 @@ int main()
     int a = std::numeric_limits<int>::max();
     int b = 1;
     
-    auto res = icc::mul(a, b);
+    auto res = icc::add(a, b);
     
     switch(res)
     {
