@@ -67,7 +67,7 @@ inline Result add(const Type l_arg, const Type r_arg)noexcept
 template<std::signed_integral Type>
 inline Result sub(const Type l_arg, const Type r_arg)noexcept
 {   
-    return check_add(l_arg, r_arg * Type(-1));
+    return add(l_arg, r_arg * Type(-1));
 }
 
 //  符号あり整数の積を行うときのオーバーフローチェックとアンダーフローチェック
