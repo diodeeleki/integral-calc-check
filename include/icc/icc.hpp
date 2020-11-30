@@ -67,7 +67,7 @@ inline Result add(const Type l_arg, const Type r_arg)noexcept
 template<std::signed_integral Type>
 inline Result sub(const Type l_arg, const Type r_arg)noexcept
 {   
-    return add(l_arg, r_arg * Type(-1));
+    return add<Type>(l_arg, r_arg * Type(-1));
 }
 
 //  符号あり整数の積を行うときのオーバーフローチェックとアンダーフローチェック
@@ -77,9 +77,9 @@ inline Result mul(const Type l_arg, const Type r_arg)noexcept
     if(l_arg == Type(0)) return success;
     
     if(Type(0) <= l_arg && Type(0) <= r_arg || Type(0) >  l_arg && Type(0) >  r_arg)
-        return std::numeric_limits<Type>::max() / abs(l_arg) >= abs(r_arg) ? success : overflow;
+        return std::numeric_limits<Type>::max() / std::abs(l_arg) >= std::abs(r_arg) ? success : overflow;
     
-    return std::numeric_limits<Type>::min() / abs(l_arg) <= -abs(r_arg) ? success : underflow;   
+    return std::numeric_limits<Type>::min() / std::abs(l_arg) <= -std::abs(r_arg) ? success : underflow;   
 }
 
 }
